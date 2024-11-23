@@ -7,8 +7,9 @@ function updateClock() {
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
     // Update the digital time
+    let hr=String(hours).padStart(2, '0');
     document.getElementById('time').textContent =
-        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        `${String(hours).padStart(2, '0')>12?hr-12:hr}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
     // Highlight the current day
     for (let i = 0; i < 7; i++) {
