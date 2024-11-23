@@ -1,0 +1,188 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #1e3c72, #2a5298);
+    color: #fff;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00ffff;
+    text-shadow: 0px 0px 20px #00ffff, 0px 0px 30px #009ffd;
+}
+
+/* Digital Clock */
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.time{
+    font-size: 1rem;
+}
+.digital-clock {
+    margin-bottom: 20px;
+    font-size: 5rem; /* Larger font size */
+    font-weight: bold;
+    padding: 15px 30px;
+    color: #00ffff;
+    text-shadow: 0px 0px 10px #00ffff, 0px 0px 30px #009ffd;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px #00ffff, inset 0px 0px 15px #009ffd;
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 10px #00ffff, 0px 0px 30px #009ffd;
+    }
+    100% {
+        text-shadow: 0px 0px 20px #00ffff, 0px 0px 40px #009ffd;
+    }
+}
+
+/* Analog Clock Container */
+.analog-clock {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border: 15px solid #00ffff;
+    border-radius: 50%;
+    background: radial-gradient(circle, #009ffd, #1e3c72);
+    box-shadow: 0px 0px 50px #00ffff, inset 0px 0px 20px #009ffd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Numbers on the clock */
+.number {
+    position: absolute;
+    font-size: 1.2rem; /* Reduced font size */
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    text-shadow: 0px 0px 10px #00ffff;
+    transform: translate(-50%, -50%);
+}
+
+.n1 { top: 15%; left: 75%; }
+.n2 { top: 30%; left: 85%; }
+.n3 { top: 50%; left: 90%; }
+.n4 { top: 70%; left: 85%; }
+.n5 { top: 85%; left: 75%; }
+.n6 { top: 90%; left: 50%; }
+.n7 { top: 85%; left: 25%; }
+.n8 { top: 70%; left: 15%; }
+.n9 { top: 50%; left: 10%; }
+.n10 { top: 30%; left: 15%; }
+.n11 { top: 15%; left: 25%; }
+.n12 { top: 10%; left: 50%; }
+
+/* Clock Hands */
+.hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translate(-50%, 0) rotate(90deg);
+}
+
+.hour-hand {
+    width: 8px;
+    height: 80px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px #fff;
+}
+
+.minute-hand {
+    width: 5px;
+    height: 100px;
+    background: #00ffff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px #00ffff;
+}
+
+.second-hand {
+    width: 2px;
+    height: 120px;
+    background: red;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px red;
+}
+
+/* Center Circle */
+.center-circle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Day Display */
+.day-display {
+    position: absolute;
+    top: 50%;
+    left: 30%; /* Positioned near "9" */
+    transform: translate(-50%, -50%);
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0px 0px 15px #00ffff, 0px 0px 25px #009ffd;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    padding: 5px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #00ffff, inset 0px 0px 10px #009ffd;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .digital-clock {
+        font-size: 3rem; /* Slightly smaller for mobile */
+    }
+
+    .analog-clock {
+        width: 250px;
+        height: 250px;
+    }
+
+    .number {
+        font-size: 1rem; /* Smaller font size for clock numbers */
+    }
+
+    .day-display {
+        font-size: 0.7rem; /* Slightly smaller day text */
+        top: 52%;
+        left: 30%; /* Adjusted for smaller clock */
+    }
+
+    h1 {
+        font-size: 2rem; /* Smaller title on mobile */
+    }
+}
