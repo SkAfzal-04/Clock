@@ -9,7 +9,7 @@ function updateClock() {
     // Update the digital time
     let hr=String(hours).padStart(2, '0');
     document.getElementById('time').textContent =
-        `${String(hours).padStart(2, '0')>12?hr-12:hr}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        `${String(hours).padStart(2, '0')>12?hr-12:hr}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} ${hr>12?'PM':'AM'}`;
 
     // Highlight the current day
     for (let i = 0; i < 7; i++) {

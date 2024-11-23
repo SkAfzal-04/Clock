@@ -210,4 +210,8 @@ section{
     .second-hand {
         height: 90px;
     }
+    .time{
+        margin-left: 5px;
+        font-size: 2rem;
+    }
 }
